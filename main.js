@@ -65,7 +65,6 @@ function moveBackgroundOnMouseMove() {
 function createRemoveMoveButton() {
     let button = $('<button>', {
         'class': 'removeMoveButton',
-        'id': 'removeMoveButton',
         'text': 'Vertical Stop',
         'on': {
             'click': toggleBackgroundMovementOff
@@ -77,7 +76,6 @@ function createRemoveMoveButton() {
 function createStartMoveButton() {
     let button = $('<button>', {
         'class': 'startMoveButton',
-        'id': 'startMoveButton',
         'text': 'Vertical Start',
         'on': {
             'click': toggleBackgroundMovementOn
@@ -116,7 +114,6 @@ function errorDisplay() {
 function shadowModal() {
     var shadowDiv = $('<div>', {
         'class': 'shadowDiv',
-        'id': 'shadowDiv',
         'on': {
             'click': removeModal
         }
