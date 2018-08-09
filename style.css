@@ -75,9 +75,9 @@ body{
     position: absolute;
     height: 72%;
     width: 37%;
-    top: 69%;
+    top: 80%;
     background-repeat: no-repeat;
-    background-image: url("images/sunImage2.png");
+    background-image: url("/space_hackathon/images/sunImage2.png");
     background-size: contain;
     cursor: pointer;
     border: none;
@@ -93,7 +93,7 @@ body{
     top: 60%;
     right: 75%;
     cursor: pointer;
-    background-image: url(images/mercuryImage2.png);
+    background-image: url("/space_hackathon/images/mercuryImage2.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -111,7 +111,7 @@ body{
     top: 34%;
     left: 22%;
     cursor: pointer;
-    background-image: url(images/venuscheck.png);
+    background-image: url("/space_hackathon/images/venuscheck.png");
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -125,7 +125,7 @@ body{
     left: 33%;
     bottom: 26%;
     cursor: pointer;
-    background-image: url(images/earthImage2.png);
+    background-image: url("/space_hackathon/images/earthImage2.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -140,7 +140,7 @@ body{
     top: 44%;
     right: 47%;
     cursor: pointer;
-    background-image: url("images/marsImage.png");
+    background-image: url("/space_hackathon/images/marsImage.png");
     background-position: center;
     background-size: contain;
     background-repeat:no-repeat;
@@ -152,10 +152,10 @@ body{
     height: 30%;
     width: 22%;
     left: 50%;
-    top: 15%;
+    top: 10%;
     text-align: center;
     cursor: pointer;
-    background-image: url(images/jupiterImage.png);
+    background-image: url("/space_hackathon/images/jupiterImage.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -170,7 +170,7 @@ body{
     top: 57%;
     left: 65%;
     cursor: pointer;
-    background-image: url(images/saturnImage2.png);
+    background-image: url("/space_hackathon/images/saturnImage2.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -185,7 +185,7 @@ body{
     right: 13%;
     top: 23%;
     cursor: pointer;
-    background-image: url(images/uranusImage2.png);
+    background-image: url("/space_hackathon/images/uranusImage2.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -200,7 +200,7 @@ body{
     border-radius: 50%;
     top: 4%;
     cursor: pointer;
-    background-image: url(images/neptuneImage2.png);
+    background-image: url("/space_hackathon/images/neptuneImage2.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -618,17 +618,14 @@ span{
         font-size: 3vmin;
     }
     .closeButton{
-        height: 100px; 
-        width: 100px;
+        height: 50px; 
+        width: 50px;
         position: absolute;
         right: 20px;
     }
     .sunDiv{
         height: 82%;
         width: 50%;
-    }
-    .mercuryDiv{
-
     }
     .venusDiv{
         top: 34%;
@@ -661,8 +658,5 @@ span{
     .uranusDiv{
         height: 25%;
         width: 12%;
-    }
-    .neptuneDiv{
-
     }
 }

@@ -65,6 +65,7 @@ function moveBackgroundOnMouseMove() {
 function createRemoveMoveButton() {
     let button = $('<button>', {
         'class': 'removeMoveButton',
+        'id': 'removeMoveButton',
         'text': 'Vertical Stop',
         'on': {
             'click': toggleBackgroundMovementOff
@@ -76,6 +77,7 @@ function createRemoveMoveButton() {
 function createStartMoveButton() {
     let button = $('<button>', {
         'class': 'startMoveButton',
+        'id': 'startMoveButton',
         'text': 'Vertical Start',
         'on': {
             'click': toggleBackgroundMovementOn
@@ -114,6 +116,7 @@ function errorDisplay() {
 function shadowModal() {
     var shadowDiv = $('<div>', {
         'class': 'shadowDiv',
+        'id': 'shadowDiv',
         'on': {
             'click': removeModal
         }
@@ -424,7 +427,7 @@ function populatePictureArr() {
                 for (let i = 0; i < solarBodies[eachBody].nasaPicture.length; i++) {
                     var divToAppend = $('<div>');
                     var imagePath = resp.collection.items[solarBodies[eachBody].nasaPicture[i]].links[0].href;
-                    solarBodies[eachBody].nasaPicture[i] = imagePath
+                    solarBodies[eachBody].nasaPicture[i] = imagePath;
                 }
             }
         };
@@ -449,15 +452,11 @@ function animateBackground(element, speed, maxTime = Infinity) {
         element.css('background-position-x', xpercent + '%');
     }
     timer = setInterval(updateBackground, intervalTime);
-
 }
 
-
-
-
-function createCarousel(planetStr) {
+function createCarousel(planet) {
     removeLoader();
-    var images = solarBodies[planetStr].nasaPicture;
+    var images = solarBodies[planet].nasaPicture;
     var carouselContainer = $('<div>', {
         'class': 'carouselContainer'
     });
