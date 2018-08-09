@@ -6,7 +6,7 @@ var solarBodies = {
     'mercury': { wikiLink: null, videos: [], videoTitles: [], nasaPicture: [16, 21, 66] },
     'venus': { wikiLink: null, videos: [], videoTitles: [], nasaPicture: [21, 28, 16, 41] },
     'earth': { wikiLink: null, videos: [], videoTitles: [], nasaPicture: [56, 72, 89] },
-    'mars': { wikiLink: null, videos: [], videoTitles: [], nasaPicture: [2, 16, 18, 36, 47] },
+    'mars': { wikiLink: null, videos: [], videoTitles: [], nasaPicture: [3, 16, 18, 36, 47] },
     'uranus': { wikiLink: null, videos: [], videoTitles: [], nasaPicture: [3, 26, 45, 47] },
     'jupiter': { wikiLink: null, videos: [], videoTitles: [], nasaPicture: [35, 97, 52] },
     'saturn': { wikiLink: null, videos: [], videoTitles: [], nasaPicture: [46, 26, 39, 50, 95] },
@@ -15,7 +15,6 @@ var solarBodies = {
 };
 
 function initializeSolarApp() {
-
     startModalClickHandler();
     populatePlanetModal();
     getWikiText();
@@ -23,7 +22,6 @@ function initializeSolarApp() {
     shadowModal();
     createRemoveMoveButton();
     astronautMessage();
-
 }
 
 function populatePlanetModal() {

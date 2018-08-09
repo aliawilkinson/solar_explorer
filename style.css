@@ -3,6 +3,11 @@
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
+
+p {
+    padding: 0 2%;
+}
+
 body{
     height: 100vh;
     width: 100vw;
@@ -211,7 +216,7 @@ body{
     display: none;
     position: absolute;
     height: 70%;
-    width: 100%;
+    width: 50%;
     z-index: 10;
     bottom: 15%;
     left: 25%;
@@ -516,7 +521,8 @@ span{
     left: 3vmin;
 }
 
-.removeMoveButton {
+.removeMoveButton,
+.startMoveButton {
     display: inline-block;
     left: 120px;
     top: 5vmin;
@@ -527,20 +533,6 @@ span{
     background-color: rgba(255, 255, 255, 0.31);
     position: relative;
     cursor: pointer;
-}
-
-.startMoveButton {
-    display: inline-block;
-    left: 3vmin;
-    top: 5vmin;
-    height: 5vmin;
-    width: 10vmin;
-    font-size: 1.5vmin;
-    border-radius: 100%;
-    background-color: rgba(255, 255, 255, 0.31);
-    position: relative;
-    cursor: pointer;
-
 }
 
 .astronautAndButton {
@@ -608,8 +600,69 @@ span{
     z-index: 2;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-device-width: 770px) {
     .displayModal {
         width: 100%;
+        bottom: initial;
+        left: initial;
+        top: 15%;
+    }
+    .videoList{
+        font-size: 2.5vmin;
+        line-height: 1.5;
+    }
+    .changeText{
+        font-size: 4vmin;
+    }
+    .buttons {
+        font-size: 3vmin;
+    }
+    .closeButton{
+        height: 100px; 
+        width: 100px;
+        position: absolute;
+        right: 20px;
+    }
+    .sunDiv{
+        height: 82%;
+        width: 50%;
+    }
+    .mercuryDiv{
+
+    }
+    .venusDiv{
+        top: 34%;
+        left: 16%;
+        height: 29%;
+        width: 17%;
+    }
+    .earthDiv{
+        left: 33%;
+        bottom: 23%;
+        height: 29%;
+        width: 16%;
+    }
+    .marsDiv{
+        height: 15%;
+        width: 10%;
+        right: 30%;
+    }
+    .jupiterDiv{
+        height: 40%;
+        width: 32%;
+        left: 35%;
+    }
+    .saturnDiv{
+        height: 27%;
+        width: 50%;
+        top: 60%;
+        left: 50%;
+    }
+    .uranusDiv{
+        height: 25%;
+        width: 12%;
+    }
+    .neptuneDiv{
+
     }
 }
