@@ -190,8 +190,9 @@ function renderVideosOnModal(currentSolarBodiesArr, planet) {
     var videoList = $('<ul>').addClass('videoListContainer');
     var videoElements = [];
     for (let i = 0; i < currentSolarBodiesArr.length; i++) {
+        var title = solarBodies[planet].videoTitles[i];
         var videoLink = $('<li>', {
-            text: solarBodies[planet].videoTitles[i],
+            text: title,
             'class': 'videoList',
             on: {
                 click: function () {
@@ -280,10 +281,9 @@ function renderPlanetInfoInModal(planet) {
 
     var videoList = $('<ul>').addClass('videoListContainer');
     var videoElements = [];
-    var closeButton = $('<button>', {
-        'id': 'closeButton',
+    var closeButton = $('<img>', {
+        'src': 'images/x-icon.png',
         'class': 'closeButton',
-        'text': 'x',
         'on': {
             'click': removeModal
         }
