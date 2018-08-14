@@ -22,7 +22,7 @@ function initializeSolarApp() {
     populatePictureArr();
     shadowModal();
     createRemoveMoveButton();
-    astronautMessage();
+    // astronautMessage();
 }
 
 function populatePlanetModal() {
