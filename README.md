@@ -1,7 +1,7 @@
 # Solar System Explorer - API Hackathon
 
 ### Requirements
-- Combine at least 3 **external** resources via AJAX requests and present their information in an application
+- AJAX requests presented to inform children about space. 
 
 ### Technologies used
 -Jquery, AJAX, vanilla javascript, CSS3, HTML 
