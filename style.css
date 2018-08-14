@@ -362,7 +362,6 @@ img.astronaut {
     list-style-type: none;
     overflow: scroll;
     margin: 0 1%;
-    position: relative;
     border-radius: 15%;
     top: 20vh;
     box-shadow: 0 4px 8px 0 rgba(255,255,255, 0.2), 0 6px 20px 0 rgba(255,255,255, 0.19);
