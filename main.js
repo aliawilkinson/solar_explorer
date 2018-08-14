@@ -18,7 +18,7 @@ function initializeSolarApp() {
     startModalClickHandler();
     populatePlanetModal();
     getWikiText();
-    // moveBackgroundOnMouseMove();
+    moveBackgroundOnMouseMove();
     populatePictureArr();
     shadowModal();
     createRemoveMoveButton();
