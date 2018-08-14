@@ -18,7 +18,8 @@ function initializeSolarApp() {
     startModalClickHandler();
     populatePlanetModal();
     getWikiText();
-    moveBackgroundOnMouseMove();
+    // moveBackgroundOnMouseMove();
+    populatePictureArr();
     shadowModal();
     createRemoveMoveButton();
     astronautMessage();
@@ -50,15 +51,17 @@ function astronautMessage() {
         })
 }
 
-function moveBackgroundOnMouseMove() {
+function backgroundSpeed() {
     let galaxyBackground = $('.mainDisplayDiv');
     galaxyBackground.on('mousemove', function () {
-        galaxyBackground.css('background-position-y', -1 * event.offsetY + 'px');
+        galaxyBackground.css('background-position-y', -0.07 * event.offsetY + 'px');
 
     });
+}
 
-    populatePictureArr();
-    animateBackground($('.mainDisplayDiv'), -.05);
+function moveBackgroundOnMouseMove() {
+    backgroundSpeed();
+    animateBackground($('.mainDisplayDiv'), -.04);
     displayText(solarBodies);
 }
 
@@ -89,10 +92,7 @@ function createStartMoveButton() {
 function toggleBackgroundMovementOn() {
     $('#startMoveButton').remove();
     createRemoveMoveButton();
-    let galaxyBackground = $('.mainDisplayDiv');
-    galaxyBackground.on('mousemove', function () {
-        galaxyBackground.css('background-position-y', -1 * event.offsetY + 'px');
-    });
+    backgroundSpeed();
 }
 
 

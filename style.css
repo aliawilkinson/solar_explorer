@@ -22,8 +22,8 @@ body{
     position: fixed;
     height: 70%;
     width: 50%;
-    left: 25%;
-    top: 15%;
+    left: 25vw;
+    top: 15vh;
     text-align: center;
     border-radius: 10%;
     background-color: rgba(157, 157, 157, 0.8);
@@ -32,7 +32,6 @@ body{
     box-shadow:
             2px 11px 8px -10px rgba(255,255,255,1),
             2px -11px 8px -10px rgba(255,255,255,1);
-    overflow: auto;
 }
 
 .startModalTitle {
@@ -69,126 +68,91 @@ body{
     width: 100%
 }
 
-.sunDiv {
+.sunDiv,
+.mercuryDiv,
+.venusDiv,
+.earthDiv,
+.marsDiv,
+.jupiterDiv,
+.saturnDiv,
+.uranusDiv,
+.neptuneDiv{
     text-align: center;
     display: inherit;
     position: absolute;
-    height: 72%;
-    width: 37%;
-    top: 80%;
     background-repeat: no-repeat;
-    background-image: url("/space_hackathon/images/sunImage2.png");
     background-size: contain;
     cursor: pointer;
+    background-position: center;
+    border-radius: 50%;
     border: none;
-    left:-10%;
+}
 
+.sunDiv {
+    height: 72%;
+    width: 37%;
+    top: 65vh;
+    left: -10vw;
+    background-image: url("/space_hackathon/images/sunImage2.png");
 }
 
 .mercuryDiv {
-    text-align: center;
-    position: absolute;
     height: 13%;
     width: 10%;
-    top: 60%;
+    top: 60vh;
     right: 75%;
-    cursor: pointer;
     background-image: url("/space_hackathon/images/mercuryImage2.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-
 }
 
 
 .venusDiv {
-    text-align: center;
-    background-size: contain;
-    position: absolute;
     height: 19%;
     width: 10%;
-    border-radius: 50%;
-    top: 34%;
-    left: 22%;
-    cursor: pointer;
+    top: 34vh;
+    left: 22vw;
     background-image: url("/space_hackathon/images/venuscheck.png");
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .earthDiv {
-    text-align: center;
-    position: absolute;
     height: 24%;
     width: 9%;
     border-radius: 50%;
-    left: 33%;
+    left: 33vw;
     bottom: 26%;
-    cursor: pointer;
     background-image: url("/space_hackathon/images/earthImage2.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
 
 }
 
 .marsDiv {
-    text-align: center;
-    position: absolute;
     height: 13%;
     width: 7%;
-    top: 44%;
+    top: 44vh;
     right: 47%;
-    cursor: pointer;
     background-image: url("/space_hackathon/images/marsImage.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat:no-repeat;
 }
 
 .jupiterDiv {
-    display: inherit;
-    position: absolute;
     height: 30%;
     width: 22%;
-    left: 50%;
-    top: 10%;
-    text-align: center;
-    cursor: pointer;
+    left: 50vw;
+    top: 10vh;
     background-image: url("/space_hackathon/images/jupiterImage.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .saturnDiv {
-    text-align: center;
-    display: inherit;
-    position: absolute;
     height: 22%;
     width: 27%;
-    top: 57%;
-    left: 65%;
-    cursor: pointer;
+    top: 57vh;
+    left: 65vw;
     background-image: url("/space_hackathon/images/saturnImage2.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .uranusDiv {
-    text-align: center;
-    display: inherit;
-    position: absolute;
     height: 15%;
     width: 8%;
     right: 13%;
-    top: 23%;
-    cursor: pointer;
+    top: 23vh;
     background-image: url("/space_hackathon/images/uranusImage2.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .neptuneDiv {
@@ -198,7 +162,7 @@ body{
     width: 8%;
     right: 6%;
     border-radius: 50%;
-    top: 4%;
+    top: 4vh;
     cursor: pointer;
     background-image: url("/space_hackathon/images/neptuneImage2.png");
     background-position: center;
@@ -219,7 +183,7 @@ body{
     width: 50%;
     z-index: 10;
     bottom: 15%;
-    left: 25%;
+    left: 25vw;
     color: white;
     box-shadow:
             2px 11px 8px -10px rgba(255,255,255,1),
@@ -236,12 +200,9 @@ body{
 }
 
 .modalControls {
-    display: inline-block;
-    position: relative;
     height: 15%;
     width: 100%;
-    top: 69%;
-
+    display: flex;
 }
 
 .contentDiv {
@@ -258,6 +219,11 @@ body{
     outline: none;
 }
 
+.buttons:hover{
+    color: hotpink;
+    border: 2px solid rgb(255, 105, 180, 0.5);
+}
+
 .changeText{
     overflow: scroll;
     font-size: 2.5vmin;
@@ -268,24 +234,25 @@ body{
     position: relative;
     display: inline-block;
     font-size: 2vmin;
-    margin: 0 1vmin;
+    margin: auto;
     height: 50%;
-    width: 25%;
-    left: 10%;
-    top: 25%;
+    width: 30%;
     border-radius: 50%;
     cursor: pointer;
     user-select:none;
 }
 
 .closeButton {
-    display: inline-block;
     height: 5vmin;
     width: 5vmin;
     border-radius: 50%;
     border: solid black;
     float: right;
     cursor: pointer;
+}
+
+.closeButton:hover{
+    border: 2px solid rgb(255, 105, 180, 0.5);
 }
 
 #imageCarousel {
@@ -397,7 +364,7 @@ img.astronaut {
     margin: 0 1%;
     position: relative;
     border-radius: 15%;
-    top: 20%;
+    top: 20vh;
     box-shadow: 0 4px 8px 0 rgba(255,255,255, 0.2), 0 6px 20px 0 rgba(255,255,255, 0.19);
     height: 50%;
     width: 25%;
@@ -439,49 +406,16 @@ ul {
     user-select:none;
 }
 
-.jupiterDiv:hover{
-    height:32%;
-    width:24%;
-}
-
-.neptuneDiv:hover{
-    height:17%;
-    width:10%;
-}
-
-.uranusDiv:hover{
-    height:17%;
-    width:10%;
-}
-
-.marsDiv:hover{
-    height:15%;
-    width:9%;
-}
-
-.earthDiv:hover{
-    height:26%;
-    width:11%;
-}
-
-.mercuryDiv:hover{
-    height:15%;
-    width:12%;
-}
-
-.venusDiv:hover{
-    height:21%;
-    width:12%;
-}
-
-.sunDiv:hover{
-    height:75%;
-    width:40%;
-}
-
+.jupiterDiv:hover,
+.neptuneDiv:hover,
+.uranusDiv:hover,
+.marsDiv:hover,
+.earthDiv:hover,
+.mercuryDiv:hover,
+.venusDiv:hover,
+.sunDiv:hover,
 .saturnDiv:hover{
-    height:24%;
-    width:29%;
+    transform: scale(1.2);
 }
 
 
@@ -517,8 +451,8 @@ span{
     animation: bounce 1s infinite alternate;
   -webkit-animation: bounce 1s infinite alternate;
   position:relative;
-    top: 10vmin;
-    left: 3vmin;
+    top: 10vh;
+    left: 3vw;
 }
 
 .removeMoveButton,
@@ -531,6 +465,7 @@ span{
     font-size: 1.5vmin;
     border-radius: 100%;
     background-color: rgba(255, 255, 255, 0.31);
+    color: white;
     position: relative;
     cursor: pointer;
 }
@@ -590,8 +525,8 @@ span{
     position: fixed;
     height: 10vmin;
     width: 20vmin;
-    top: 35vmin;
-    left: 5vmin;
+    top: 35vh;
+    left: 5vh;
     font-size: 2vmin;
     background: rgba(185, 183, 187, 0.51);
     color: #fff;
@@ -605,7 +540,7 @@ span{
         width: 100%;
         bottom: initial;
         left: initial;
-        top: 15%;
+        top: 15vh;
     }
     .videoList{
         font-size: 2.5vmin;
@@ -626,15 +561,16 @@ span{
     .sunDiv{
         height: 82%;
         width: 50%;
+        top: 55vh;
     }
     .venusDiv{
-        top: 34%;
-        left: 16%;
+        top: 34vh;
+        left: 16vw;
         height: 29%;
         width: 17%;
     }
     .earthDiv{
-        left: 33%;
+        left: 33vw;
         bottom: 23%;
         height: 29%;
         width: 16%;
@@ -647,13 +583,13 @@ span{
     .jupiterDiv{
         height: 40%;
         width: 32%;
-        left: 35%;
+        left: 35vw;
     }
     .saturnDiv{
         height: 27%;
         width: 50%;
-        top: 60%;
-        left: 50%;
+        top: 60vh;
+        left: 50vw;
     }
     .uranusDiv{
         height: 25%;
