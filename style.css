@@ -522,6 +522,7 @@ span{
 .apologyDiv, .apologyDiv > img, .apologyDiv > span {
     display: block;
     float: none;
+    margin: auto;
 }
 
 .astronautMessage {

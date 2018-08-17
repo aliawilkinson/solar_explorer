@@ -22,7 +22,7 @@ function initializeSolarApp() {
     populatePictureArr();
     shadowModal();
     createRemoveMoveButton();
-    // astronautMessage();
+    twitterRequest();
 }
 
 function populatePlanetModal() {
@@ -39,22 +39,22 @@ function populatePlanetModal() {
     }
 }
 
-function astronautMessage() {
-    $('#astronaut').hover(function () {
-        $('#astronautAndButton').append($('<div>')
-            .attr('id', 'astronautMessage')
-            .addClass('astronautMessage')
-            .text('Brought to you by Bora, Hanh, Omer, Brett, and Alia!'));
-    },
-        function () {
-            $('#astronautMessage').remove();
-        })
-}
+// function astronautMessage() {
+//     $('#astronaut').hover(function () {
+//         $('#astronautAndButton').append($('<div>')
+//             .attr('id', 'astronautMessage')
+//             .addClass('astronautMessage')
+//             .text('Brought to you by Bora, Hanh, Omer, Brett, and Alia!'));
+//     },
+//         function () {
+//             $('#astronautMessage').remove();
+//         })
+// }
 
 function backgroundSpeed() {
     let galaxyBackground = $('.mainDisplayDiv');
     galaxyBackground.on('mousemove', function () {
-        galaxyBackground.css('background-position-y', -0.07 * event.offsetY + 'px');
+        galaxyBackground.css('background-position-y', -0.07 * event.screenY + 'px');
 
     });
 }
@@ -132,10 +132,64 @@ function hideStartModal() {
     $('#startModal').hide();
 }
 
+// function getDataFromTwitter() {
+//     var twitterAjaxObject = {
+//         'dataType': 'json',
+//         'url': 'https://api.twitter.com/1.1/statuses/user_timeline.json',
+//         'method': 'GET',
+//         'timeout': 3000,
+//         'data': {
+//             'screen_name': 'NASA_Astronauts',
+//             'count': '20'
+//         },
+//         'success': function (result) {
+//             if (result.success === true) {
+//                 removeLoader();
+//             } else {
+//                 errorDisplay();
+//             }
+//         },
+//         'error': function (error) {
+//             errorDisplay();
+//         }
+//     };
+
+//     $.ajax(twitterAjaxObject);
+// }
+
+function twitterRequest() {
+    var twitterArray = [];
+    var twitterObject = {
+        url: ' https://s-apis.learningfuze.com/hackathon/twitter/index.php',
+        method: 'get',
+        dataType: 'json',
+        data: {
+            'screen_name': 'NASA_Astronauts'
+        },
+        metadata: {
+            'iso_language_code': 'en',
+            'result_type': 'recent',
+        },
+        success: function (result) {
+            console.log('twitter data', result);
+            var twitterData = (result.tweets.statuses);
+            for (var index = 0; index < twitterData.length; index++) {
+                twitterArray.push(result.tweets.statuses[index].text);
+                var twitterDiv = $('<div>', { class: 'borderClass' });
+                var twitterIcon = $('<i>', { class: 'fab fa-twitter', src: 'images/twitter.svg' });
+                $('#tweets').append(twitterDiv);
+                $(twitterDiv).append(twitterIcon, '   ', twitterArray[index]);
+            }
+
+        },
+    }
+    $.ajax(twitterObject);
+}
+
 function getDataFromYoutube(planetInfo) {
     var youtubeAjaxObject = {
         'dataType': 'json',
-        'url': 'http://s-apis.learningfuze.com/hackathon/youtube/search.php',
+        'url': 'https://s-apis.learningfuze.com/hackathon/youtube/search.php',
         'method': 'POST',
         'timeout': 3000,
         'data': {
