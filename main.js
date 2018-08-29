@@ -22,7 +22,7 @@ function initializeSolarApp() {
     populatePictureArr();
     shadowModal();
     createRemoveMoveButton();
-    twitterRequest();
+    // twitterRequest();
 }
 
 function populatePlanetModal() {
@@ -187,34 +187,39 @@ function twitterRequest() {
 }
 
 function getDataFromYoutube(planetInfo) {
+    var API_KEY = 'AIzaSyCSizsUkb5GqPfSuxAG43QxyscxxJs7m5E';
     var youtubeAjaxObject = {
         'dataType': 'json',
-        'url': 'https://s-apis.learningfuze.com/hackathon/youtube/search.php',
-        'method': 'POST',
+        'url': 'https://www.googleapis.com/youtube/v3/search',
+        'method': 'GET',
         'timeout': 3000,
         'data': {
-            'q': 'solar system ' + planetInfo,
-            'maxResults': 3,
+            'part': 'snippet',
+            'maxResults': '3',
+            'part': 'snippet',
+            'q': 'solar system' + planetInfo,
             'type': 'video',
-            'detailLevel': 'verbose'
+            'key': API_KEY,
         },
         'success': function (result) {
-            if (result.success === true) {
+            if (result) {
                 removeLoader();
-                var currentSolarBodiesArr = Object.keys(result.data);
-                solarBodies.videos = currentSolarBodiesArr;
-                for (var i = 0; i < currentSolarBodiesArr.length; i++) {
+                var currentSolarBodiesArr = [];
+                for (var i = 0; i < result.items.length; i++) {
+                    currentSolarBodiesArr.push(result.items[i].id.videoId);
                     var videoTitles = solarBodies[planetInfo].videoTitles;
-                    var title = result.data[currentSolarBodiesArr[i]].snippet.title;
+                    var title = result.items[i].snippet.title;
                     videoTitles = videoTitles.push(title);
                 }
+                solarBodies.videos = currentSolarBodiesArr;
                 renderVideosOnModal(currentSolarBodiesArr, planetInfo);
             } else {
                 errorDisplay();
             }
         },
         'error': function (error) {
-            errorDisplay()
+            console.log(error);
+            errorDisplay();
         }
     };
 

@@ -517,6 +517,7 @@ span{
     height: 25vh;
     width: 25vh;
     position: relative;
+    margin: auto;
 }
 
 .apologyDiv, .apologyDiv > img, .apologyDiv > span {
