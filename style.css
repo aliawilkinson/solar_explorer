@@ -544,8 +544,8 @@ span{
 }
 
 @media only screen and (max-width: 770px) {
-    .span {
-        font-size: 35px;
+    .text-overlay-div span {
+        font-size: 3.5vmin;
     }
     .removeMoveButton, 
     .startMoveButton{
@@ -565,7 +565,7 @@ span{
         font-size: 4vmin;
     }
     .buttons {
-        font-size: 35px;
+        font-size: 3.5vmin;
     }
     .closeButton{
         height: 50px; 
