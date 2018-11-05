@@ -2,9 +2,6 @@
 ## Summary
 This project was designed to teach elementary school children about the Solar System through interactive objects. 
 
-## Developer
-* Alia Wilkinson
-
 ## Feature List
 * Parallax user responsive background
 * Custom modal to explain the app 
